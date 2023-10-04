@@ -216,3 +216,10 @@ Todo
   transform: rotate(-45deg);
   opacity: 1;
 }
+
+/* 
+Nomatch
+*/
+.NoMatch__text {
+  font-size: 20px;
+}

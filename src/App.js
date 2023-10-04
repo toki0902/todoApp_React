@@ -3,6 +3,8 @@ import Todo from "./Todo";
 import AppCss from "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import { Route, Routes } from "react-router-dom";
+import NoMatch from "./NoMatch";
 
 function App() {
   return (
@@ -11,7 +13,10 @@ function App() {
       <div className="flex__wrap">
         <Sidebar />
         <div className="contents__container">
-          <Todo />
+          <Routes>
+            <Route path="/" element={<Todo />} />
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
         </div>
       </div>
     </>
