@@ -1,27 +1,17 @@
 import React, { useState } from "react";
+import Todo from "./Todo";
 import AppCss from "./App.css";
-import TodoInput from "./conpornents/TodoInput";
-import TodoTasks from "./conpornents/TodoTasks";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function App() {
-  const [val, setVal] = useState("");
-  const [todos, setTodos] = useState([]);
-
   return (
     <>
-      <div className="main__container">
-        <div className="todo__container">
-          <TodoInput
-            setVal={setVal}
-            val={val}
-            setTodos={setTodos}
-            todos={todos}
-          ></TodoInput>
-          <div className="todotasks__wrap">
-            <ul className="task__list">
-              <TodoTasks setTodos={setTodos} todos={todos}></TodoTasks>
-            </ul>
-          </div>
+      <Header />
+      <div className="flex__wrap">
+        <Sidebar />
+        <div className="contents__container">
+          <Todo />
         </div>
       </div>
     </>
